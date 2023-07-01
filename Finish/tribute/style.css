@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f2f2f2;
+  background-image: url('https://static.vecteezy.com/system/resources/previews/000/141/925/original/set-of-pokemon-icons-vector.jpg'); /* Reemplaza 'fondo.png' con la URL de tu imagen de fondo */
+  background-repeat: repeat;
+}
+
+#main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+h1{
+  align-items: start;
+  display: flex;
+}
+#title {
+  text-align: center;
+  color: #ffec1a;
+  font-size: 4em; /* Ajusta el tamaño de la letra según tus preferencias */
+  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black; /* Grosor y color del borde */
+  font-family: 'Press Start 2P', cursive;
+}
+
+
+#image {
+  max-width: 100%;
+  display: block;
+  align-self: center;
+}
+
+#img-caption {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+}
+
+#headline {
+  text-align: center;
+  color: #ff1a1a;
+}
+
+#tribute-link {
+  color: #ff1a1a;
+  text-decoration: none;
+}
+
+#tribute-link:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Pizza</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header class="header">
+      <h1 id="title" class="text-center">Pizza Form</h1>
+      <p id="description" class="description text-center">
+        Customize your pizza and provide your details below to place your order.
+      </p>
+    </header>
+    <form id="survey-form">
+      <label id="name-label" for="name">Name</label>
+      <input type="text" name="name" id="name" class="form-control" placeholder="name" required="">
+      </br>
+      <label id="email-label" for="email">Email</label>
+      <input type="email" name="email" id="email" class="form-control" placeholder="Email" required="">
+      </br>
+      <label id="number-label" for="number">Age<span class="clue">(optional)</span></label>
+      <input type="number" name="age" id="number" min="10" max="99" class="form-control" placeholder="Age">
+      </br>
+      <label id="dropdown-label" for="dropdown">Gender</label>
+      <select id="dropdown" name="role" class="form-control">
+        <option disabled="" selected="" value="">Select gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+        <option value="preferNo">Prefer not to say</option>
+        <option value="squirrel">
+          A white albino squirrel from southwestern Morocco sexually identified as a non-binary Finnish Apache
+          helicopter.</option>
+      </select>
+      <p>Pineapple pizza?</p>
+      <label>
+        <input name="user-recommend" value="definitely" type="radio" class="input-radio" checked="">Definitely</label>
+      <label>
+        <input name="user-recommend" value="maybe" type="radio" class="input-radio">Maybe</label>
+
+      <label><input name="user-recommend" value="No" type="radio" class="input-radio">Not sure</label>
+      <p>What is your favorite flavour of pizza?</p>
+      <select id="most-like" name="mostLike" class="form-control" required="">
+        <option disabled="" selected="" value="">Select an option</option>
+        <option value="Salami">Salami</option>
+        <option value="Peperoni">Peperoni</option>
+        <option value="Pineapple">Pineapple</option>
+        <option value="Cheese">Cheese</option>
+      </select>
+  <div class="form-group">
+    <p>
+      Do your own pizza
+    </p>
+
+    <label><input name="prefer" value="Cheese" type="checkbox" class="input-checkbox">Cheese</label>
+    <label><input name="prefer" value="Pepperoni" type="checkbox" class="input-checkbox">Pepperoni</label>
+    <label><input name="prefer" value="Mushroom" type="checkbox" class="input-checkbox">Mushroom</label>
+    <label><input name="prefer" value="Bell Pepper" type="checkbox" class="input-checkbox">Bell Pepper</label>
+    <label><input name="prefer" value="Onion" type="checkbox" class="input-checkbox">Onion</label>
+    <label><input name="prefer" value="Ham" type="checkbox" class="input-checkbox">Ham</label>
+  </div>
+  <div class="form-group">
+    <p>Any comments or suggestions?</p>
+    <textarea id="comments" class="input-textarea" name="comment" placeholder="Enter your comment here..."></textarea>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" id="submit" class="submit-button">
+      Submit
+    </button>
+  </div>
+  </form>
+  </div>
+
+</body>
+
+</html>

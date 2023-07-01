@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python Introduction</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+  <nav id="navbar">  
+    <header>Python Introduction</header>
+      <ul>
+        <li><a class="nav-link" href="#General_Introduction">General Introduction</a></li>
+        <li><a class="nav-link" href="#Code_Blocks">Code Blocks</a></li>
+        <li><a class="nav-link" href="#Line_Breaks">Line Breaks</a></li>
+        <li><a class="nav-link" href="#Naming_Conventions">Naming Conventions</a></li>
+        <li><a class="nav-link" href="#Basic_Object_Types">Basic Object Types</a></li>
+        <li><a class="nav-link" href="#Operators">Operators</a></li>
+        <li><a class="nav-link" href="#Modules">Modules</a></li>
+        <li><a class="nav-link" href="#Flow_Control">Flow Control</a></li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="General_Introduction">
+  <header>General Introduction</header>
+  <p>Python is a versatile and popular programming language known for its simplicity and readability. Created by Guido van Rossum and first released in 1991, it has gained widespread adoption and has become one of the most widely used languages in various domains, including web development, data analysis, artificial intelligence, and scientific computing.</p>
+  <p>One of the key features that sets Python apart is its easy-to-understand syntax, which emphasizes code readability and reduces the complexity typically associated with programming. It uses whitespace indentation to define code blocks, making it visually intuitive and encouraging developers to write clean and organized code.</p>
+  <p>The language supports multiple programming paradigms, including procedural, object-oriented, and functional programming. It provides a vast standard library and a rich ecosystem of third-party packages and frameworks, allowing developers to leverage existing tools and resources to build complex applications efficiently.</p>
+  <p>Python's versatility extends to its cross-platform compatibility, enabling developers to write code that can run seamlessly on different operating systems, such as Windows, macOS, and Linux. It has a large and active community of developers who contribute to its continuous growth, ensuring the availability of extensive documentation, tutorials, and support.</p>
+  <p>The popularity in the field of data analysis and machine learning is particularly notable. It offers powerful libraries such as NumPy, Pandas, and Matplotlib, which provide efficient data manipulation, analysis, and visualization capabilities. Additionally, frameworks like TensorFlow and PyTorch have made Python a leading language for building and training deep learning models.</p>
+  <p>Beyond data-related tasks, Python is widely used in web development, where frameworks like Django and Flask simplify the process of building robust and scalable web applications. Its ease of use and rapid development capabilities make it an ideal choice for prototyping, scripting, and automation tasks.</p>
+<p>
+In this page you will see an introduction to programming in Python. It contains information about various fundamental aspects of the language, such as </p>
+  <ul>
+    <li>Code structure</li>
+    <li>Naming conventions</li>
+    <li>Basic object types</li>
+    <li>Operators</li>
+    <li>Modules</li>
+  </ul>
+        
+        <p>It also provides examples and explanations on how to use these and more concepts in Python.</p> 
+  
+</section>
+      <section class="main-section" id="Code_Blocks">
+        <header>Code Blocks</header>
+    <p>In Python, code blocks are delineated by colons (:) and are defined by indentation, rather than using curly brackets ({}) as in languages like C or Java. The use of indentation is a fundamental part of Python's syntax and helps to determine the scope and organization of code within a block.</p>
+      <p>Four spaces indentation level is the python standar never use tabs. Mixing tabs and spaces produces erros, if you want, you can set the tab to spaces.</p>
+      </section>
+      <section class="main-section" id="Line_Breaks">
+         <header>Line Breaks</header>
+    <p>Typically, a statement must be on one line. Bracketed code can be split across lines, or if necessary, you can use a backslash at the end of the line to continue a statement on the next line. However, this is generally considered bad practice and can make the code harder to debug.</p>
+      </section>
+      <section class="main-section" id="Naming_Conventions">
+         <header>Naming Conventions</header>
+    <table>
+      <tr>
+        <th>Style</th>
+        <th>Use</th>
+      </tr>
+      <tr>
+        <td>StudlyCase</td>
+        <td>Class names</td>
+      </tr>
+      <tr>
+        <td>joined_lower</td>
+        <td>Identifiers, functions, class methods, and attributes</td>
+      </tr>
+      <tr>
+        <td>_joined_lower</td>
+        <td>Internal class attributes</td>
+      </tr>
+      <tr>
+        <td>__joined_lower</td>
+        <td>Private class attributes</td>
+      </tr>
+      <tr>
+        <td>JOINED_LOWER</td>
+        <td>Constants</td>
+      </tr>
+    </table>
+      </section>
+      <section class="main-section" id="Basic_Object_Types"> 
+        <header>Basic Object Types</header>
+    <table>
+      <tr>
+        <th>Type</th>
+        <th>Examples</th>
+      </tr>
+      <tr>
+        <td>None</td>
+        <td>None</td>
+      </tr>
+      <tr>
+        <td>Boolean</td>
+        <td>True, False</td>
+      </tr>
+      <tr>
+        <td>Integer</td>
+        <td>-sys.minint, 0, sys.maxint</td>
+      </tr>
+      <tr>
+        <td>long</td>
+        <td>1L, 9787L (Arbitrary length ints)</td>
+      </tr>
+      <tr>
+        <td>Float</td>
+        <td>3.1415, inf, -inf, nan</td>
+      </tr>
+      <tr>
+        <td>Complex</td>
+        <td>2-3j</td>
+      </tr>
+      <tr>
+        <td>String</td>
+        <td>"String", 'String', '''String''', """String""" r'raw string', b'ASCII string', u'unicode string'</td>
+      </tr>
+      <tr>
+        <td>Tuple</td>
+        <td>empty = () (Empty tuple) (1, True, "dog") (Immutable list)</td>
+      </tr>
+      <tr>
+        <td>List</td>
+        <td>empty = [] (Empty list) [1, True, "Dog"] (Mutable list)</td>
+      </tr>
+      <tr>
+        <td>Set</td>
+        <td>empty = set() (Empty set) set([1, True, "Dog"]) (Mutable set)</td>
+      </tr>
+      <tr>
+        <td>Dictionary</td>
+        <td>empty = {} (Mutable object) {'a': 'Dog', 7: 'Seven', True: 1}</td>
+      </tr>
+      <tr>
+        <td>File</td>
+        <td>f = open('filename', 'rb')</td>
+      </tr>
+    </table>
+      </section>
+      <section class="main-section" id="Operators">   
+        <header>Operators</header>
+    <table>
+      <tr>
+        <th>Operators</th>
+        <th>Functionality</th>
+      </tr>
+      <tr>
+        <td>+</td>
+        <td>Addition, works on numbers, lists, strings, tuples, and other sequence concatenation</td>
+      </tr>
+      <tr>
+        <td>-</td>
+        <td>Subtraction, also set difference</td>
+      </tr>
+      <tr>
+        <td>/</td>
+        <td>Division</td>
+      </tr>
+      <tr>
+        <td>*</td>
+        <td>Multiplication or String, Tuple, List replication</td>
+      </tr>
+      <tr>
+        <td>%</td>
+        <td>Modulus</td>
+      </tr>
+      <tr>
+        <td>//</td>
+        <td>Integer division</td>
+      </tr>
+      <tr>
+        <td>**</td>
+        <td>Exponentiation</td>
+      </tr>
+      <tr>
+        <td>=, -=, +=, /=, ...</td>
+        <td>Assignment operators</td>
+      </tr>
+      <tr>
+        <td>==, !=, &lt;, &lt;=, &gt;, &gt;=</td>
+        <td>Boolean comparisons</td>
+      </tr>
+      <tr>
+        <td>not</td>
+        <td>Negation</td>
+      </tr>
+      <tr>
+        <td>in</td>
+        <td>Containment test operator</td>
+      </tr>
+      <tr>
+        <td>is</td>
+        <td>Object identity operator</td>
+      </tr>
+      <tr>
+        <td>|, ^, &amp;, ~</td>
+        <td>Bitwise operators</td>
+      </tr>
+      <tr>
+        <td>&lt;&lt;, &gt;&gt;</td>
+        <td>Bit shift operators</td>
+      </tr>
+      <tr>
+        <td>:</td>
+        <td>Statement separator</td>
+      </tr>
+    </table>
+   
+      </section>
+      <section class="main-section" id="Modules">
+        <header>Modules</header>
+    <p>Modules open up a world of Python extensions that can be imported and used. Access to the functions, variables, and classes of a module depends on how the module was imported.</p>
+    <table>
+      <tr>
+        <th>Import Method</th>
+        <th>Access/Syntax</th>
+      </tr>
+      <tr>
+        <td>import math</td>
+        <td>math.cos(math.pi/3)</td>
+      </tr>
+      <tr>
+        <td>import math as m</td>
+        <td>m.cos(m.pi/3)</td>
+      </tr>
+      <tr>
+        <td>from math import cos, pi</td>
+        <td>cos(pi/3)</td>
+      </tr>
+      <tr>
+        <td>from math import *</td>
+        <td>cos(pi/3)</td>
+      </tr>
+    </table>
+    <p>Often used modules:</p>
+    <table>
+      <tr>
+        <th>Module</th>
+        <th>Purpose</th>
+      </tr>
+      <tr>
+        <td>math</td>
+        <td>Core math functions and the constants pi and e</td>
+      </tr>
+      <tr>
+        <td>pickle</td>
+        <td>Serialize objects to a file</td>
+      </tr>
+      <tr>
+        <td>re</td>
+        <td>A library of Perl-like regular expression operations</td>
+      </tr>
+      <tr>
+        <td>pandas</td>
+        <td>R DataFrames for Python</td>
+      </tr>
+      <tr>
+        <td>numpy</td>
+        <td>Numerical Python library</td>
+      </tr>
+      <tr>
+        <td>tensorflow</td>
+        <td>AI-related module designed by Google</td>
+      </tr>
+      <tr>
+        <td>sklearn</td>
+        <td>AI-related module</td>
+      </tr>
+    </table>
+      </section>
+      <section class="main-section" id="Flow_Control">
+        <header>Flow Control</header>
+    <p>The ability to control the order in which statements and instructions are executed in a program is known as flow control. It allows you to make decisions, repeat code, and handle different scenarios based on specific conditions. </p>
+    <h3>Conditional Statements</h3>
+    <p>Conditional statements allow you to execute different blocks of code based on certain conditions. The main conditional statement in Python is the <code>if</code> statement, which can be expanded with <code>elif</code> (short for "else if") and <code>else</code> clauses. Here's an example: </p>
+    <pre>
+			<code>
+if condition:
+    statements
+elif condition:
+    statements
+else:
+    statements
+      </code>
+		</pre> 
+    <h3>Ternary Statement</h3>
+    <pre>
+			<code>
+x = y if a &gt; b else z
+      </code>
+		</pre>
+    <h3>Loops</h3>
+    <p>Loops enable you to repeat a block of code multiple times. Python provides two types of loops: <code>for</code> loop and <code>while</code> loop. </p>
+    <h4>While Loop</h4>
+    <pre>
+			<code>
+while iterable:
+  statements
+else:
+  statements
+    </code>
+		</pre>
+    <h4>For Loop</h4>
+    <pre>
+			<code>
+for x in iterable:
+    statements
+else:  # Optional for on completion code
+    statements
+    </code>
+		</pre>
+         <h3>Control Statements</h3>
+    <p>Control statements allow you to modify the flow of a loop or skip certain parts of a loop.</p>
+    <ul>
+      <li>
+        <code>break</code>: Terminates the loop entirely.
+      </li>
+      <li>
+        <code>continue</code>: Skips the rest of the loop and jumps back to the beginning.
+      </li>
+      <li>
+        <code>pass</code>: Does nothing. It is used as a placeholder in blocks where code will eventually go.
+      </li>
+    </ul>
+      </section>
+    </main>
+  </body>
+</html>
