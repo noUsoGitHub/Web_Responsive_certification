@@ -1,3 +1,6 @@
+
+
+
 /* Custom properties/variables */
 :root {
 
@@ -12,6 +15,7 @@
   --accent: #006602;
   /* Tipografía */
   --body-font: 'Montserrat', sans-serif;
+  --ubuntu-font: 'Ubuntu', sans-serif;
   --big-font-size: 40px;
   --subheading-font-size: 25px;
   --subsection-font-size: 18px;
@@ -47,6 +51,9 @@
   --hue: 207;
   --sat: 90%;
   --lig: 61;
+  /* Variables*/
+  --light-radius: 50vmax;
+  --degree : 0deg;
 }
 
 /* Base reset */
@@ -92,6 +99,7 @@ body {
   background-size:cover;
   background-position: center;
   background-attachment: fixed;
+  backdrop-filter: hue-rotate(var(--degree));
 }
 
 h1,
@@ -123,38 +131,30 @@ img {
   width: 100%;
 }
 
-@keyframes hoverColor {
-  0% { color: #0033ff; }
-  10% { color: #33f; }
-  20% { color: #66f; }
-  30% { color: #99f; }
-  40% { color: #ccf; }
-  50% { color: #fff; }
-  60% { color: #ccf; }
-  70% { color: #99f; }
-  80% { color: #66f; }
-  90% { color: #33f; }
-  100% { color: #0033ff; }
+.blur_bg{
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px); /*Safari*/
+}
+.transparent_bg{
+  background: transparent;
 }
 
 /* Navigation */
 .nav {
   display: flex;
   justify-content: flex-end;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-  background: var(--primary);
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+  height: 8vh;
+  background: rgba(0, 0, 0, 0.4);
   z-index: 10;
 }
-
 .nav-list {
   display: flex;
   margin-right: 2rem;
 }
-
 @media (max-width: 28.75em) {
   .nav {
     justify-content: center;
@@ -167,16 +167,65 @@ img {
 
 .nav-list a {
   display: block;
-  font-size: 2.2rem;
-  padding: 2rem;
+  font-size: 3rem;
+  padding: 0.3rem 1rem;
+  color: white; /* Inicialmente, el color de la letra es transparente */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  transition: color 1s linear; /* Transición de 1 segundo para el color de la letra */
+}
+.nav-list a.blue_teal {
+  --c1: #0f83ff;
+  --c2: #afdadb;
+  --degree : 227deg;
+}
+.nav-list a.pink_purple {
+ --c1: #fa0185;
+  --c2: #972cde;
+  --degree : 677deg;
+}
+
+.nav-list a.orange_yellow {
+  --c1: #ff3c2f;
+  --c2: #f9b202;
+  --degree : 750deg;
 }
 
 .nav-list a:hover {
-  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black; 
-  animation: hoverColor 2s linear infinite;
-  scale: 1.3;
+  color: transparent; /* Al hacer hover, el color de la letra se establece en blanco */
+  background: linear-gradient(90deg, var(--c1), var(--c2));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* Flashlight Overlay */
+:root {
+  cursor: auto;
+  --cursorX: 100vw;
+  --cursorY: 25vh;
+}
+:root:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  pointer-events: none;
+  background: radial-gradient(
+    circle var(--light-radius) at var(--cursorX) var(--cursorY),
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,.5) 80%,
+    rgba(0,0,0,.95) 100%
+  );
+  transition: background 0.5s ease-out; /* Add a transition for smooth fading */
 }
 
+@media (max-width: 600px){
+  :root:before{
+    background: transparent;
+  }
+   
+}
 /* Welcome section */
 .welcome-section {
   display: flex;
@@ -184,14 +233,26 @@ img {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: 87vh;
 }
-
+.welcome-section h1 {
+  --c1: crimson; 
+  --c2: firebrick;
+  color: transparent; /* Al hacer hover, el color de la letra se establece en blanco */
+  background: linear-gradient(90deg, var(--c1), var(--c2));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 10;
+  font-family: 'Poppins', sans-serif;
+  
+}
 .welcome-section>p {
   font-size: 3rem;
   font-weight: 200;
   font-style: italic;
   color: var(--text);
+  z-index: 10;
 }
 
 /* Projects section */
@@ -221,6 +282,7 @@ img {
   max-width: 1280px;
   margin: 0 auto;
   margin-bottom: 6rem;
+  place-items: center;
 }
 
 @media (max-width: 30.625em) {
@@ -233,6 +295,60 @@ img {
   }
 }
 
+.article-card {
+  text-align: left;
+  width: 350px;
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 300ms;
+}
+
+.article-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.article-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-card .content {
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  padding: 30px 20px 20px 20px;
+  height: auto;
+  bottom: 0;
+  background: linear-gradient(transparent, rgb(0, 0, 0));
+}
+
+.article-card .title {
+  margin: 0;
+  font-size: 17px;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.article-card .chips{
+  display: flex;
+}
+.article-card .chips li{
+  padding: 0px 6px;
+  margin-left: 10px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgb(43, 89, 63);
+  border-radius: 10px;
+  border:1px solid #035700; 
+}
+.article-card .chips li p{
+  padding: 4px;
+}
 .project {
   background: var(--background);
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -246,17 +362,6 @@ img {
 
 .project:hover .code {
   color: #ff7f50;
-}
-
-.project-image {
-  height: calc(100% - 6.8rem);
-  width: 100%;
-  object-fit: cover;
-}
-
-.project-title {
-  font-size: 2rem;
-  padding: 2rem 0.5rem;
 }
 
 .btn {
